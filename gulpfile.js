@@ -46,3 +46,7 @@ gulp.task('upload', function () {
         // here we use a passthrough stream
         .pipe(gutil.noop());
 });
+
+gulp.task('watch', function() {
+  gulp.watch('src/css/*', ['upload']);
+});
