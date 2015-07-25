@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/warfine/improving-my-frontend-workflow#readme",
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-minify-css": "^1.2.0"
   }
 }
