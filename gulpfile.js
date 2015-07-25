@@ -4,7 +4,8 @@ var gulp = require('gulp'),
   postcss = require('gulp-postcss'),
   autoprefixer = require('autoprefixer-core'),
   gutil = require('gulp-util'),
-  ftp = require('gulp-ftp');
+  ftp = require('gulp-ftp'),
+  svgSprite = require('gulp-svg-sprite');
 
 gulp.task('default', function() {
   // place code for your default task here
@@ -33,20 +34,36 @@ gulp.task('css', function() {
     .pipe(gulp.dest('dest/css'));
 });
 
-gulp.task('upload', function () {
-    return gulp.src('src/css/*.css')
-        .pipe(ftp({
-            host: '',
-            user: '',
-            pass: '',
-            remotePath: ''
-        }))
-        // you need to have some kind of stream after gulp-ftp to make sure it's flushed
-        // this can be a gulp plugin, gulp.dest, or any kind of stream
-        // here we use a passthrough stream
-        .pipe(gutil.noop());
+gulp.task('upload', function() {
+  return gulp.src('src/css/*.css')
+    .pipe(ftp({
+      host: '',
+      user: '',
+      pass: '',
+      remotePath: ''
+    }))
+    // you need to have some kind of stream after gulp-ftp to make sure it's flushed
+    // this can be a gulp plugin, gulp.dest, or any kind of stream
+    // here we use a passthrough stream
+    .pipe(gutil.noop());
 });
 
 gulp.task('watch', function() {
   gulp.watch('src/css/*', ['upload']);
+});
+
+config = {
+  mode: {
+    css: { // Activate the «css» mode
+      render: {
+        css: true // Activate CSS output (with default options)
+      }
+    }
+  }
+};
+
+gulp.task('sprite', function() {
+  gulp.src('src/img/*.svg')
+    .pipe(svgSprite(config))
+    .pipe(gulp.dest('dist/img'));
 });
