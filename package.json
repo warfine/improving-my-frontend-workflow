@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/warfine/improving-my-frontend-workflow/issues"
   },
-  "homepage": "https://github.com/warfine/improving-my-frontend-workflow#readme"
+  "homepage": "https://github.com/warfine/improving-my-frontend-workflow#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
 }
