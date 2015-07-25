@@ -1,0 +1,19 @@
+{
+  "name": "improving-my-frontend-workflow",
+  "version": "1.0.0",
+  "description": "trying to implement npm, gulp, postcss into my current workflow",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/warfine/improving-my-frontend-workflow.git"
+  },
+  "author": "Vadim Yakhin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/warfine/improving-my-frontend-workflow/issues"
+  },
+  "homepage": "https://github.com/warfine/improving-my-frontend-workflow#readme"
+}
